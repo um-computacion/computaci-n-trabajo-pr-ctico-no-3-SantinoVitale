@@ -13,3 +13,11 @@ def ingrese_numero():
         ValueError: Si la entrada no es un número válido.
         NumeroDebeSerPositivo: Si el número ingresado es negativo.
     """
+    entrada = input("Ingrese un número: ")
+    try:
+        numero = int(entrada)
+        if numero < 0:
+            raise NumeroDebeSerPositivo("El número debe ser positivo")
+        return numero
+    except ValueError:
+        raise ValueError("La entrada debe ser un número válido") 
